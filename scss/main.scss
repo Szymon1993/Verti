@@ -1,0 +1,13 @@
+@import 'variables/breakpoints';
+@import 'variables/colors';
+
+@import 'utilities/reset';
+@import 'utilities/fonts';
+@import 'utilities/grid';
+
+@import "components/general";
+@import "components/navigation";
+@import "components/header";
+@import "components/cards";
+@import "components/about";
+@import "components/footer";

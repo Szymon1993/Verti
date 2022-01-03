@@ -1,0 +1,54 @@
+@use 'sass:math';
+
+$grid__columns: 12;
+$grid__columns-width: math.div(100%, $grid__columns);
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  //margin: -1rem -1rem 0 -1rem;
+}
+
+[class*='col-'] {
+  min-height: 1px;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+@for $i from 1 through $grid__columns {
+  .col-xs-#{$i} {
+  width: $grid__columns-width * $i
+  }
+}
+
+@for $i from 1 through $grid__columns {
+ .col-sm-#{$i} {
+   @media (min-width: $breakpoint-sm) {
+     width: $grid__columns-width;
+   }
+ }
+}
+
+@for $i from 1 through $grid__columns {
+  .col-md-#{$i} {
+    @media (min-width: $breakpoint-md) {
+      width: $grid__columns-width * $i;
+    }
+  }
+}
+
+@for $i from 1 through $grid__columns {
+  .col-lg-#{$i} {
+    @media (min-width: $breakpoint-lg) {
+      width: $grid__columns-width * $i;
+    }
+  }
+}
+
+@for $i from 1 through $grid__columns {
+  @media (min-width: $breakpoint-xl) {
+    .col-xl-#{$i} {
+      width: $grid__columns-width * $i;
+    }
+  }
+}
